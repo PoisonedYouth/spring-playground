@@ -1,6 +1,6 @@
 package com.poisonedyouth.coroutines.domain.model
 
-import java.time.Instant
+import java.time.OffsetDateTime
 import java.util.UUID
 
 data class Post(
@@ -8,6 +8,6 @@ data class Post(
     val title: String,
     val content: String,
     val author: String,
-    val createdAt: Instant,
-    val updatedAt: Instant
+    val createdAt: OffsetDateTime,
+    val updatedAt: OffsetDateTime
 )

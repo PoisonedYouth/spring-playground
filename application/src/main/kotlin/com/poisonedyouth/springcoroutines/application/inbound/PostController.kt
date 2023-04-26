@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.Instant
+import java.time.OffsetDateTime
 import java.util.UUID
 
 @RestController
@@ -39,7 +40,7 @@ class PostController(
     }
 
     private suspend fun PostDto.toPost(uuid: UUID): Post {
-        val new = Instant.now()
+        val new = OffsetDateTime.now()
         return Post(
             id = uuid,
             title = title,

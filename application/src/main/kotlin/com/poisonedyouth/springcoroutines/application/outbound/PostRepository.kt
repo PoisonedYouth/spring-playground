@@ -10,10 +10,11 @@ import org.springframework.r2dbc.core.awaitOne
 import org.springframework.r2dbc.core.flow
 import org.springframework.stereotype.Repository
 import java.time.Instant
+import java.time.OffsetDateTime
 import java.util.UUID
 import java.util.function.BiFunction
 
-@Repository
+//@Repository
 class PostRepository(
     private val databaseClient: DatabaseClient
 ) : PostRepositoryPort {
@@ -24,8 +25,8 @@ class PostRepository(
             title = row.getOrThrow("title", String::class.java),
             content = row.getOrThrow("content", String::class.java),
             author = row.getOrThrow("author", String::class.java),
-            createdAt = row.getOrThrow("created_at", Instant::class.java),
-            updatedAt = row.getOrThrow("updated_at", Instant::class.java)
+            createdAt = row.getOrThrow("created_at", OffsetDateTime::class.java),
+            updatedAt = row.getOrThrow("updated_at", OffsetDateTime::class.java)
         )
     }
 
