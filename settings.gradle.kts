@@ -2,6 +2,7 @@ rootProject.name = "spring-playground"
 
 include(":application")
 include(":domain")
+include(":provider")
 
 pluginManagement {
     repositories {
