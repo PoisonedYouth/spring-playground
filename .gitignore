@@ -2,4 +2,5 @@
 /build/
 /domain/build/
 /application/build/
+/provider/build/
 .idea/

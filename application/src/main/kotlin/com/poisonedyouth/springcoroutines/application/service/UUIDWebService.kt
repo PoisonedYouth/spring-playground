@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.channels.produce
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.selects.select
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
@@ -39,6 +40,7 @@ class UUIDWebService : UUIDServicePort {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     private fun retrieveDataByFile() = CoroutineScope(SupervisorJob()).produce<UUID> {
+        delay(500)
         val resource = UUIDWebService::class.java.classLoader
             .getResourceAsStream("UUIDS") ?: error("Resource not found!")
         send(
